@@ -1,0 +1,33 @@
+{
+  "input_outputs_dir": "../walter_russell_optical_dynamo_generator/outputs",
+  "power_w": 10000.0,
+  "stage_impedance_ohm": 50.0,
+  "base_frequency_hz": 16000.0,
+  "max_frequency_hz": 128000.0,
+  "drive_mode": "matched_octave_ladder",
+  "loaded_q": 20.0,
+  "core_loaded_q": 12.0,
+  "steps_per_128k_period": 64,
+  "cycles_at_16k": 72,
+  "sample_stride": 4,
+  "source_ramp_cycles_at_16k": 8,
+  "line_characteristic_impedance_ohm": 50.0,
+  "line_velocity_factor": 0.70,
+  "line_attenuation_np_per_m_at_128k": 0.00012,
+  "standing_wave_positions": 241,
+  "gif_frames": 48,
+  "coupling": {
+    "same_cable_adjacent_stage_k": 0.008,
+    "same_stage_colocated_k": 0.0025,
+    "mirror_pair_same_cable_k": 0.004,
+    "a4_b4_center_same_cable_k": 0.020,
+    "core_to_a4_branch_k": 0.012,
+    "core_to_b4_branch_k": 0.012,
+    "orthogonal_core_k": 0.080
+  },
+  "notes": [
+    "The simulator is a physics-based RLC, coupled-inductor, and transmission-line model.",
+    "It does not assume over-unity behavior. Power and losses are computed from the equivalent network.",
+    "40 m is treated as a real distributed cable path, not as a 128 kHz quarter-wave resonator."
+  ]
+}

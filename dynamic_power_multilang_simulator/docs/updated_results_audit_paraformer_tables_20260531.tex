@@ -1,0 +1,431 @@
+% Copy-paste section snippet.
+% Required packages in the main document:
+% \usepackage{amsmath,booktabs,float,graphicx,siunitx}
+% \sisetup{detect-all=true,per-mode=symbol}
+
+\section{Results: Audit Findings and Paraformer Experiment}
+\label{sec:results-audit-paraformer}
+
+The audit produces three results. First, each of the thirteen
+constant-coefficient assumptions has a documented failure regime in ordinary
+engineering literature. Second, the failure regimes are not isolated anomalies:
+they form a repeatable pattern in which a coefficient becomes a function of
+state variables that the basic pedagogical model has suppressed. Third, when a
+coefficient is written as a function rather than a number, the missing term is
+not arbitrary. It is the derivative or memory contribution that follows from
+the product rule, from mutual-coupling kinematics, or from the more general
+causal response functional.
+
+The empirical component of the paper tests the paraformer case, because the
+paraformer sits at the point where the inductive, permeability and saturation
+entries of the audit become an experimentally measurable transformer
+architecture.
+
+\subsection{Correction Checklist for the Updated Coil-Length Audit}
+\label{subsec:updated-correction-checklist}
+
+\begin{enumerate}
+\item Replace all old figure paths of the form \texttt{../figures/...} with
+\texttt{../figures\_updated\_coils\_20260531/...}.
+\item In the dynamic Metglas table, the last row
+\texttt{matched\_thevenin\_U\_A\_to\_U\_B\_limit} must be interpreted with the
+second numeric column as the dynamic-current matched limit and the third numeric
+column as the \SI{50}{\milli\tesla} target-current matched limit.
+\item In the near-\SI{10}{\kilo\watt} paraformer table, ``active cable per
+winding'' means all four parallel AWG10-equivalent Litz bundles together. One
+parallel bundle is \SI{10.2}{\metre}; all four bundles total
+\SI{40.8}{\metre}.
+\item The A3/B3 stage now contains C1, C2, C3 and C4. The A4/B4 stage contains
+C1--C8.
+\item All C1--C8 cables have the same end-to-end active length,
+\SI{445.293167}{\metre}. The unequal wound portions are corrected by
+non-inductive equalizer sections.
+\item The external A/B ladder stage impedance remains \SI{50}{\ohm}. The branch
+impedances are \SI{100}{\ohm}, \SI{100}{\ohm}, \SI{200}{\ohm} and
+\SI{400}{\ohm}; the parallel branch sets restore the stage impedance to
+\SI{50}{\ohm}.
+\item With the present orthogonal value \(k=0.08\), the Metglas centre is not a
+near-\SI{10}{\kilo\watt} transfer element in the full dynamic ladder run. The
+dynamic matched limit is \SI{8.711158}{\watt}; the near-\SI{10}{\kilo\watt}
+case is a separate high-stress paraformer design point.
+\end{enumerate}
+
+\subsection{Metglas AMCC-1000 Parameter Description}
+\label{subsec:metglas-amcc1000-parameters}
+
+The paraformer test section is instantiated here as an orthogonal Metglas
+AMCC-1000 centre \cite{amcc1000}. The Metglas centre is treated as an
+instrumented, resonant, two-axis magnetic coupler rather than as an ordinary
+closed transformer. The first U-core, denoted \(U_A\), is aligned with the
+\(X\)-axis of the device. The second U-core, \(U_B\), is rotated by
+\SI{90}{\degree} and aligned with the \(Y\)-axis. The coupling coefficient
+\(k\) is therefore not assumed to be transformer-like: the default orthogonal
+model uses \(k=0.08\), and the transfer sweep separately reports stronger
+hypothetical values up to \(k=0.95\).
+
+The analysis is a conventional electromagnetic simulation. It does not assume
+any non-classical energy source. Every reported watt, volt-ampere and var comes
+from the coupled RLC state equations, phasor extraction and the matched-load
+Thevenin bound. The calculations are intended to guide low-power bench
+experiments before any high-voltage or high-current hardware is attempted.
+
+\begin{table}[H]
+\centering
+\caption{Updated C1--C8 cable lengths and equalizer lengths.}
+\label{tab:updated-cable-lengths}
+\small
+\begin{tabular}{lrrrrl}
+\toprule
+Cable & End-to-end active (m) & Wound total (m) & Equalizer (m) & Cut +3\% (m) & Wire \\
+\midrule
+C1 & 445.293167 & 445.293167 & 0.000000 & 459.681962 & AWG10-equiv RF Litz, 416 x AWG36 \\
+C2 & 445.293167 & 445.293167 & 0.000000 & 459.681962 & AWG10-equiv RF Litz, 416 x AWG36 \\
+C3 & 445.293167 & 185.480193 & 259.812975 & 459.681962 & AWG12-equiv RF Litz, 262 x AWG36 \\
+C4 & 445.293167 & 185.480193 & 259.812975 & 459.681962 & AWG12-equiv RF Litz, 262 x AWG36 \\
+C5--C8 & 445.293167 each & 92.147202 each & 353.145966 each & 459.681962 each & AWG18-equiv RF Litz, 65 x AWG36 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Updated stage coil contents, conductor length per bobbin, turns and physical branch inductance.}
+\label{tab:updated-stage-coils}
+\small
+\begin{tabular}{llrlll}
+\toprule
+Stage pair & Active cables & \(f\) (kHz) & Length per cable in bobbin & Turns per cable & Branch \(L\) \\
+\midrule
+A1/B1 & C1 C2 & 16 & 75.937339 m & 128.599732 & 994.718394 uH \\
+A2/B2 & C1 C2 & 32 & 53.769615 m & 91.058737 & 497.359197 uH \\
+A3/B3 & C1 C2 C3 C4 & 64 & C1/C2 46.469815 m; C3/C4 46.370048 m & C1/C2 100.405929; C3/C4 100.190366 & 497.359197 uH \\
+A4/B4 & C1--C8 & 128 & C1/C2 46.469815 m; C3/C4 46.370048 m; C5--C8 46.073601 m & C1/C2 100.405929; C3/C4 100.190366; C5--C8 99.549841 & 497.359197 uH \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Octave impedance model after the coil-length correction.}
+\label{tab:updated-stage-impedance}
+\small
+\begin{tabular}{lrrrrrrr}
+\toprule
+Stage pair & \(f\) (kHz) & Stage \(Z\) & Branches & Branch \(Z\) & Stage \(L\) & Branch \(L\) & Branch \(C\) \\
+\midrule
+A1/B1 & 16 & 50 ohm & 2 & 100 ohm & 497.359197 uH & 994.718394 uH & 99.471839 nF \\
+A2/B2 & 32 & 50 ohm & 2 & 100 ohm & 248.679599 uH & 497.359197 uH & 49.735920 nF \\
+A3/B3 & 64 & 50 ohm & 4 & 200 ohm & 124.339799 uH & 497.359197 uH & 12.433980 nF \\
+A4/B4 & 128 & 50 ohm & 8 & 400 ohm & 62.169900 uH & 497.359197 uH & 3.108495 nF \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The physical dimensions used for the core are taken from the AMCC-1000 product
+drawing for Metglas Alloy 2605SA1 \cite{metglas2605sa1}. The material
+properties below are the manufacturer's general 2605SA1 data and are used only
+as engineering reference values; the dynamic simulator uses the
+measured/design inductance, capacitance and damping values in the CSV files.
+
+\begin{table}[H]
+\centering
+\caption{AMCC-1000 dimensions and magnetic area values used in the simulation.}
+\label{tab:amcc1000-dimensions}
+\begin{tabular}{llr}
+\toprule
+Symbol & Meaning & Value \\
+\midrule
+\(a\) & core build / limb build & \SI{33.0}{\milli\metre} \\
+\(b\) & window width & \SI{40.0}{\milli\metre} \\
+\(c\) & window length & \SI{105.0}{\milli\metre} \\
+\(d\) & core height & \SI{85.0}{\milli\metre} \\
+\(e\) & core width & \SI{106.0}{\milli\metre} \\
+\(f\) & core length & \SI{171.0}{\milli\metre} \\
+\(A_e\) & net magnetic cross-sectional area & \SI{23.0}{\centi\metre\squared} \\
+\(W_a\) & window area & \SI{42.0}{\centi\metre\squared} \\
+\(A_p\) & area product & \SI{966}{\centi\metre\tothe{4}} \\
+\(\eta_p\) & pack factor & \SI{82}{\percent} \\
+\(m\) & core mass & \SI{7109}{\gram} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Metglas 2605SA1 material reference properties used for design context.}
+\label{tab:metglas2605sa1-properties}
+\begin{tabular}{llr}
+\toprule
+Property & Symbol & Value \\
+\midrule
+Saturation induction, as cast & \(B_s\) & \SI{1.56}{\tesla} \\
+Maximum DC permeability, annealed & \(\mu_{\max}\) & \(6.0\times10^5\) \\
+Maximum DC permeability, as cast & \(\mu_{\max}\) & \(4.5\times10^4\) \\
+Saturation magnetostriction & \(\lambda_s\) & \SI{27}{ppm} \\
+Electrical resistivity & \(\rho_e\) & \SI{130}{\micro\ohm\centi\metre} \\
+Curie temperature & \(T_C\) & \SI{395}{\celsius} \\
+Ribbon thickness & \(t_r\) & \SI{23}{\micro\metre} \\
+Density & \(\rho_m\) & \SI{7.18}{\gram\per\centi\metre\cubed} \\
+Lamination factor & -- & \(>84\%\) \\
+Continuous service temperature & -- & \SI{150}{\celsius} \\
+Crystallization temperature & -- & \SI{510}{\celsius} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The dynamic model has one modal current for \(U_A\) and one for \(U_B\). In the
+current design each core mode is resonated at \SI{128}{\kilo\hertz}, uses an
+eight-turn reference winding, and uses a \SI{2}{\milli\metre} equivalent gap.
+The measured/design inductance and capacitance values are
+\begin{equation}
+L_A=L_B=\SI{92.0518}{\micro\henry}, \qquad
+C_A=C_B=\SI{16.7953}{\nano\farad}.
+\end{equation}
+The ideal resonance condition is
+\begin{equation}
+f_0 = \frac{1}{2\pi\sqrt{LC}}, \qquad
+C = \frac{1}{\omega^2 L}.
+\end{equation}
+At \SI{128}{\kilo\hertz}, the inductive reactance is
+\begin{equation}
+X_L = \omega L = \SI{74.0324}{\ohm}.
+\end{equation}
+With the selected loaded core quality factor \(Q_c=12\), the dynamic damping
+resistance used by the modal solver is
+\begin{equation}
+R_d = \frac{X_L}{Q_c} = \SI{6.16937}{\ohm}.
+\end{equation}
+
+The coupled state equation solved by the simulator is
+\begin{align}
+\mathbf{L}\frac{d\mathbf{i}}{dt} &= \mathbf{v}_s(t)-\mathbf{R}\mathbf{i}-\mathbf{v}_C,\\
+\frac{d\mathbf{v}_C}{dt} &= \mathbf{C}^{-1}\mathbf{i}.
+\end{align}
+The mutual inductance between any two modes \(i\) and \(j\) is
+\begin{equation}
+M_{ij}=k_{ij}\sqrt{L_iL_j}.
+\end{equation}
+For the orthogonal Metglas pair in the default model,
+\begin{equation}
+k_{AB}=0.08, \qquad M_{AB}=\SI{7.36414}{\micro\henry}.
+\end{equation}
+
+\subsection{Metglas AMCC-1000 Dynamic Transformer Test}
+\label{subsec:metglas-amcc1000-dynamic-test}
+
+The simulator outputs define four Metglas-specific waveform groups. First, the
+raw modal currents \(i_A(t)\) and \(i_B(t)\) are the simulated resonant currents
+in the two AMCC windings. Second, \(v_{C,A}(t)\) and \(v_{C,B}(t)\) are the
+modal tank-capacitor voltages. Third, the direct inter-core induced voltages
+are
+\begin{align}
+v_{B\leftarrow A}(t) &= M_{AB}\frac{di_A}{dt},\\
+v_{A\leftarrow B}(t) &= M_{AB}\frac{di_B}{dt}.
+\end{align}
+Fourth, the practical monitor signals at the centre interface are
+\begin{align}
+v_{\mathrm{in},A4\rightarrow U_A}(t)
+&= \sum_{j\in A4} M_{A,j}\frac{di_j}{dt},\\
+v_{\mathrm{out},U_B\rightarrow B4}(t)
+&= \sum_{j\in B4} M_{j,B}\frac{di_B}{dt}.
+\end{align}
+
+The instantaneous mutual power terms reported in the waveform CSV are
+\begin{align}
+p_{A\rightarrow B}(t)&=v_{B\leftarrow A}(t)i_B(t),\\
+p_{B\rightarrow A}(t)&=v_{A\leftarrow B}(t)i_A(t),\\
+p_{\mathrm{net},A\rightarrow B}(t)&=p_{A\rightarrow B}(t)-p_{B\rightarrow A}(t).
+\end{align}
+Because inductive coupling stores and returns magnetic energy each cycle, the
+instantaneous curves are not by themselves a load-power claim. The matched-load
+transfer limit is computed separately as
+\begin{equation}
+V_{\mathrm{oc},2}=\omega M I_{1,\mathrm{rms}},
+\qquad
+P_{\max}=\frac{V_{\mathrm{oc},2}^{2}}{4R_{d,2}}.
+\end{equation}
+
+Flux density is reconstructed from the modal current by
+\begin{equation}
+B(t)=\frac{L i(t)}{N A_e}.
+\end{equation}
+For sinusoidal verification the equivalent voltage relation is
+\begin{equation}
+V_{\mathrm{rms}}=4.44 f N A_e B_{\mathrm{peak}}.
+\end{equation}
+
+The Python run uses 34 coupled modes and writes 129 time samples over the last
+eight cycles at \SI{128}{\kilo\hertz}. Its dynamic Metglas summary is shown in
+Table~\ref{tab:updated-metglas-signals}.
+
+\begin{table}[H]
+\centering
+\caption{Dynamic Metglas centre signals from the full coupled ladder model.}
+\label{tab:updated-metglas-signals}
+\small
+\begin{tabular}{lrrl}
+\toprule
+Metric & RMS / average / dynamic limit & Peak / \SI{50}{\milli\tesla} limit & Unit \\
+\midrule
+\(U_A\) core current & 2.478628 & 3.449532 & A \\
+\(U_B\) core current & 3.367880 & 4.758976 & A \\
+\(U_A\) tank voltage & 183.020191 & 255.414153 & V \\
+\(U_B\) tank voltage & 249.530296 & 352.351148 & V \\
+\(U_A\) flux density & 0.012400 & 0.017257 & T \\
+\(U_B\) flux density & 0.016849 & 0.023808 & T \\
+Direct \(U_A\rightarrow U_B\) mutual voltage & 14.275697 & 19.908115 & V \\
+Input \(A4\rightarrow U_A\) mutual voltage & 21.629079 & 30.577635 & V \\
+Output \(U_B\rightarrow B4\) mutual voltage & 54.305273 & 76.609354 & V \\
+Average \(U_A\rightarrow U_B\) mutual power & 10.267611 & 58.458069 & W \\
+Average net \(U_A\rightarrow U_B\) imbalance & 21.344931 & 22.945421 & W \\
+Matched Thevenin \(U_A\rightarrow U_B\) limit & 8.711158 & 70.991223 & W \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth]{../figures_updated_coils_20260531/metglas_core_currents.png}
+\caption{Simulated \(U_A\) and \(U_B\) AMCC-1000 modal currents during the last eight \SI{128}{\kilo\hertz} cycles.}
+\label{fig:updated-metglas-core-currents}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth]{../figures_updated_coils_20260531/metglas_core_voltages.png}
+\caption{Metglas tank voltages and direct \(U_A\rightarrow U_B\) mutual voltage.}
+\label{fig:updated-metglas-core-voltages}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth]{../figures_updated_coils_20260531/metglas_input_output_signals.png}
+\caption{Input/output monitor signals: summed A4 input into \(U_A\), summed \(U_B\) output toward B4, and the direct \(U_A\rightarrow U_B\) induced voltage.}
+\label{fig:updated-metglas-input-output}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth]{../figures_updated_coils_20260531/metglas_transferred_power_time.png}
+\caption{Instantaneous mutual power exchange. The oscillatory terms include stored magnetic energy exchange; average load power must be interpreted through the matched-load model.}
+\label{fig:updated-metglas-power-time}
+\end{figure}
+
+The current full-ladder dynamic state has modest core current because the
+Metglas windings are not directly driven in the same way as the separately
+optimized near-\SI{10}{\kilo\watt} paraformer model. The matched-load Thevenin
+limits are shown in Table~\ref{tab:updated-metglas-transfer-limits}.
+
+\begin{table}[H]
+\centering
+\caption{Metglas matched-load transfer limits for the current \(k=0.08\) model.}
+\label{tab:updated-metglas-transfer-limits}
+\small
+\begin{tabular}{lrrrrrr}
+\toprule
+Case & \(k\) & \(M\) (uH) & \(I_1\) (A rms) & \(V_{\mathrm{oc},2}\) (V rms) & \(R_d\) (ohm) & \(P_{\max}\) (W) \\
+\midrule
+Dynamic \(U_A\rightarrow U_B\) & 0.08 & 7.364140 & 2.475577 & 14.661833 & 6.169368 & 8.711158 \\
+Dynamic \(U_B\rightarrow U_A\) & 0.08 & 7.364140 & 3.369146 & 19.954079 & 6.169368 & 16.134768 \\
+Target \SI{50}{\milli\tesla} \(U_A\rightarrow U_B\) & 0.08 & 7.364140 & 7.067092 & 41.855512 & 6.169368 & 70.991223 \\
+Target \SI{50}{\milli\tesla} \(U_B\rightarrow U_A\) & 0.08 & 7.364140 & 7.067092 & 41.855512 & 6.169368 & 70.991223 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The sweep file shows that a conventional, strong-coupling value \(k=0.95\)
+would give approximately \SI{10010.9}{\watt} at the \SI{50}{\milli\tesla}
+target current. The orthogonal \(k=0.08\) arrangement reaches the same nominal
+\SI{10}{\kilo\watt} matched-load target only by raising the design flux density
+and changing the winding count. The optimized orthogonal design point is shown
+in Table~\ref{tab:updated-near-10kw-paraformer}.
+
+\begin{table}[H]
+\centering
+\caption{Separate near-\SI{10}{\kilo\watt} orthogonal paraformer design point.}
+\label{tab:updated-near-10kw-paraformer}
+\begin{tabular}{lr}
+\toprule
+Quantity & Value \\
+\midrule
+Frequency & \SI{128}{\kilo\hertz} \\
+Assumed orthogonal coupling & \(k=0.08\) \\
+Gap & \SI{2.0}{\milli\metre} \\
+Required peak flux density & \SI{0.593428}{\tesla} \\
+Turns per winding & 12 \\
+Primary winding current & \SI{55.917426}{\ampere} rms \\
+Primary winding voltage & \SI{9314.329475}{\volt} rms \\
+Secondary open-circuit voltage & \SI{745.146358}{\volt} rms \\
+Matched secondary load & \SI{13.881077}{\ohm} \\
+Matched secondary current & \SI{26.840365}{\ampere} rms \\
+Matched secondary power & \SI{10000.000}{\watt} \\
+Self inductance & \SI{0.207116}{\milli\henry} \\
+Mutual inductance & \SI{16.569316}{\micro\henry} \\
+\(X_L\) at \SI{128}{\kilo\hertz} & \SI{166.572928}{\ohm} \\
+Resonance capacitance & \SI{7.464586}{\nano\farad} \\
+Circulating reactive power & \SI{0.520833}{MVAR} \\
+Parallel AWG10-equivalent Litz bundles & 4 per winding \\
+Active cable per parallel bundle & \SI{10.2}{\metre} \\
+Active cable per winding, all parallel bundles & \SI{40.8}{\metre} \\
+Procurement cable per winding & \SI{46.92}{\metre} \\
+Procurement cable, both windings & \SI{93.84}{\metre} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.98\textwidth]{../figures_updated_coils_20260531/metglas_transfer_power_sweep.png}
+\caption{Matched-load transfer bound as a function of coupling coefficient \(k\).}
+\label{fig:updated-metglas-transfer-sweep}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{../figures_updated_coils_20260531/orthogonal_paraformer_10kw_design.png}
+\caption{Scaled summary of the separate near-\SI{10}{\kilo\watt} orthogonal design point.}
+\label{fig:updated-orthogonal-paraformer-10kw-design}
+\end{figure}
+
+The corresponding bench procedure is as follows. First, mount the AMCC-1000
+cores in the \(0^\circ/90^\circ\) orthogonal geometry and measure each winding
+with an LCR meter and a vector network analyzer. Record \(L_A\), \(L_B\),
+winding resistance, self-resonant frequency and the fitted parallel
+capacitance. Second, drive \(U_A\) through a current-limited RF source at low
+voltage and measure the open-circuit induced voltage on \(U_B\). Estimate
+\begin{equation}
+k = \frac{V_{\mathrm{oc},B}}{\omega I_A\sqrt{L_A L_B}}.
+\end{equation}
+Repeat the reciprocal \(U_B\rightarrow U_A\) test. Third, install the
+calculated resonant capacitance and trim with a VNA until the phase of the
+input impedance crosses zero at \SI{128}{\kilo\hertz}. Measure the loaded
+quality factor from
+\begin{equation}
+Q_L=\frac{f_0}{f_2-f_1}.
+\end{equation}
+Use the measured \(Q_L\) to update \(R_d=\omega L/Q_L\) in the simulator.
+
+At low power, probe \(i_A(t)\), \(i_B(t)\), \(v_{C,A}(t)\), and \(v_{C,B}(t)\)
+with isolated high-voltage probes and RF current probes. Compare measured RMS
+and phase with the simulated Metglas signal summary. For rectified output
+experiments on the B side, use a resonant matched load or an RF-rated SiC diode
+bridge followed by a controlled DC load. Diode junction capacitance must be
+included in the measured output tuning because at \SI{128}{\kilo\hertz} it can
+shift the B-side resonance and alter \(Q_L\). Report real DC output power as
+\begin{equation}
+P_{\mathrm{DC}}=\langle v_{\mathrm{DC}}(t)i_{\mathrm{DC}}(t)\rangle
+\end{equation}
+and compare it against RF input real power, not against circulating var.
+
+Under the updated coil-length audit, the A/B ladder is internally consistent:
+all C1--C8 conductors have equal end-to-end active length, while the wound
+portions are adjusted by stage so that the physical branch inductances match
+the octave impedance model. The present \(k=0.08\) orthogonal Metglas centre
+remains a weakly coupled, strongly reactive subsystem. The simulated dynamic
+ladder gives watt-level matched transfer, whereas the near-\SI{10}{\kilo\watt}
+case is a separate high-stress design point requiring
+\SI{0.593}{\tesla} peak flux density and approximately
+\SI{0.521}{MVAR} circulating reactive power. That point is below the
+nominal 2605SA1 saturation induction, but it is high enough that core loss,
+thermal rise, insulation stress and layout parasitics become first-order
+experimental variables.

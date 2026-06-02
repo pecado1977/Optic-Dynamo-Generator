@@ -1,0 +1,17 @@
+{
+  "branch_mode_count": 32,
+  "core_mode_count": 2,
+  "drive_mode": "matched_octave_ladder",
+  "duration_s": 0.0045,
+  "internal_dt_s": 1.220703125e-07,
+  "mean_total_capacitor_energy_J": 0.18251354177366377,
+  "mean_total_magnetic_energy_J": 0.18261830176265192,
+  "mode_count": 34,
+  "peak_total_capacitor_energy_J": 0.2884927496842141,
+  "peak_total_magnetic_energy_J": 0.29324473506357673,
+  "power_w": 10000.0,
+  "sample_count": 9217,
+  "steady_state_window_s": 0.00225000000000064,
+  "total_copper_loss_W": 166.6803287883193,
+  "total_dynamic_damping_loss_W": 3697.520957955641
+}

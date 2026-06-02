@@ -1,0 +1,5 @@
+case,frequency_Hz,k,M_uH,primary_I_rms_A,secondary_open_circuit_V_rms,secondary_R_dynamic_ohm,Pmax_matched_secondary_W,note
+dynamic_U_A_to_U_B,128000.0,0.08,7.364140263374006,2.47557661728148,14.661832773101718,6.169367720378822,8.711157691099652,Matched resonant-load Thevenin limit for the current orthogonal Metglas coupling.
+dynamic_U_B_to_U_A,128000.0,0.08,7.364140263374006,3.3691457439458565,19.954079038033207,6.169367720378822,16.134768111683712,Matched resonant-load Thevenin limit for the current orthogonal Metglas coupling.
+target_50mT_U_A_to_U_B,128000.0,0.08,7.364140263374006,7.067092319543284,41.855511583802326,6.169367720378822,70.99122346666664,Matched resonant-load Thevenin limit for the current orthogonal Metglas coupling.
+target_50mT_U_B_to_U_A,128000.0,0.08,7.364140263374006,7.067092319543284,41.855511583802326,6.169367720378822,70.99122346666664,Matched resonant-load Thevenin limit for the current orthogonal Metglas coupling.

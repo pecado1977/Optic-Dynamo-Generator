@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+title: "Walter Russell Optical Dynamo / AMCC-1000 Paraformer Simulator"
+message: "If you use this simulation package, please cite it using this metadata."
+type: software
+authors:
+  - family-names: Kortela
+    given-names: Jukka
+year: 2026
+license: MIT
+repository-code: "https://github.com/REPLACE_WITH_USERNAME/REPLACE_WITH_REPOSITORY"
+abstract: "Dynamic RLC and mutual-inductance simulation package for an updated Walter Russell Optical Dynamo Generator interpretation with an orthogonal Metglas AMCC-1000 paraformer center."

@@ -1,0 +1,24 @@
+{
+  "input_outputs_dir": "../generator/outputs",
+  "base_dynamic_config": "../dynamic_standing_wave_simulator/config/default_config.json",
+  "power_w": 10000.0,
+  "stage_impedance_ohm": 50.0,
+  "orthogonal_paraformer_10kw": {
+    "enabled": true,
+    "target_power_w": 10000.0,
+    "assumed_orthogonal_k": 0.08,
+    "gap_mm": 2.0,
+    "target_max_winding_current_rms_A": 60.0,
+    "target_current_density_A_per_mm2": 3.0,
+    "mean_turn_length_m_estimate": 0.85,
+    "procurement_reserve": 0.15,
+    "parallel_litz_awg10_equiv_bundle_area_mm2": 5.261154954510373
+  },
+  "metglas_transfer_k_values": [0.02, 0.04, 0.06, 0.08, 0.10, 0.15, 0.20, 0.30, 0.40, 0.50, 0.65, 0.80, 0.95],
+  "metglas_b_limit_t": 0.05,
+  "notes": [
+    "This simulator reuses the current corrected A1-A4/B4-B1 cable plan.",
+    "Reactive power is reported as inductor VAR, capacitor VAR, and net source VAR at the modal frequency.",
+    "Metglas maximum transferred power is the resonant matched-load Thevenin limit Pmax = (omega*M*I_primary_rms)^2/(4*R_secondary_dynamic)."
+  ]
+}

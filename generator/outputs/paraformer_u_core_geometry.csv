@@ -1,0 +1,3 @@
+part,core,orientation_deg_about_optical_axis,flux_axis,winding,turns_reference,gap_mm,L_self_mH,X_L_at_128k_ohm,note
+U_A,AMCC-1000 half / U-core equivalent,0,X,E1_A,8.0,2.0,0.09205175329217508,74.03241264454586,first U side of orthogonal paraformer centre
+U_B,AMCC-1000 half / U-core equivalent,90,Y,E1_B,8.0,2.0,0.09205175329217508,74.03241264454586,second U side rotated 90 degrees; not closed as an ordinary transformer pair

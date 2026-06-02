@@ -1,0 +1,13 @@
+metric,frequency_Hz,rms_value,peak_value,unit,note
+U_A_core_current,128000.0,2.4786284000064245,3.44953224750804,A,Simulated U_A Metglas resonant-mode current.
+U_B_core_current,128000.0,3.3678798833690884,4.758976311154744,A,Simulated U_B Metglas resonant-mode current.
+U_A_capacitor_voltage,128000.0,183.02019063628794,255.41415320789483,V,Modal resonant capacitor voltage in the U_A tank.
+U_B_capacitor_voltage,128000.0,249.53029636587928,352.3511477017192,V,Modal resonant capacitor voltage in the U_B tank.
+U_A_flux_density,128000.0,0.012400113585889674,0.01725736366418545,T,Computed from B=L*I/(N*Ae) using Ae=23.0 cm^2 and the simulated current.
+U_B_flux_density,128000.0,0.0168488721816071,0.02380826702813706,T,Computed from B=L*I/(N*Ae) using Ae=23.0 cm^2 and the simulated current.
+direct_U_A_to_U_B_mutual_voltage,128000.0,14.275697395509367,19.908114766330655,V,v_UB<-UA = M_UAUB*dI_UA/dt.
+input_A4_to_U_A_mutual_voltage,128000.0,21.62907901657426,30.577635031784745,V,Summed A4 branch mutual voltage into U_A.
+output_U_B_to_B4_mutual_voltage,128000.0,54.305272842212545,76.60935369078534,V,Summed induced voltage from U_B into the B4 branch set.
+actual_average_U_A_to_U_B_power,128000.0,10.267610592875757,58.4580690479469,W,Time-average of v_UB<-UA(t)*i_UB(t) in the simulated dynamic state.
+actual_average_net_U_A_to_U_B_power,128000.0,21.344931345865092,22.945420670728105,W,Average directional imbalance p_UA->UB - p_UB->UA in the simulated dynamic state.
+matched_thevenin_U_A_to_U_B_limit,128000.0,8.711157691099652,70.99122346666664,W,RMS value is dynamic-current matched limit; peak_value column stores the 50 mT target-current matched limit.

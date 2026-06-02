@@ -1,0 +1,64 @@
+{
+  "buildCommand" : {
+    "command" : "build",
+    "skipDependencies" : false,
+    "style" : "buildOnly"
+  },
+  "configuredTargets" : [
+    {
+      "guid" : "889b08758949a2e84bae2a2c6753439f9cae8f8715089f317fd489a37ec74720"
+    }
+  ],
+  "containerPath" : "/Users/jkortela/Documents/walter_russell_dynamo/github_simulaattori/StateDependentParaformerSimulator/StateDependentParaformerSimulator.xcodeproj",
+  "continueBuildingAfterErrors" : false,
+  "dependencyScope" : "workspace",
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "activeArchitecture" : "arm64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "macosx",
+      "sdk" : "macosx15.1",
+      "sdkVariant" : "macos",
+      "supportedArchitectures" : [
+        "arm64e",
+        "arm64",
+        "x86_64"
+      ],
+      "targetArchitecture" : "arm64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/jkortela/Documents/walter_russell_dynamo/github_simulaattori/StateDependentParaformerSimulator/.derivedData/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/jkortela/Documents/walter_russell_dynamo/github_simulaattori/StateDependentParaformerSimulator/.derivedData/Build/Products",
+      "derivedDataPath" : "/Users/jkortela/Documents/walter_russell_dynamo/github_simulaattori/StateDependentParaformerSimulator/.derivedData",
+      "indexDataStoreFolderPath" : "/Users/jkortela/Documents/walter_russell_dynamo/github_simulaattori/StateDependentParaformerSimulator/.derivedData/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/jkortela/Documents/walter_russell_dynamo/github_simulaattori/StateDependentParaformerSimulator/.derivedData/Index.noindex/PrecompiledHeaders",
+      "pchPath" : "/Users/jkortela/Documents/walter_russell_dynamo/github_simulaattori/StateDependentParaformerSimulator/.derivedData/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "commandLine" : {
+        "table" : {
+          "CODE_SIGNING_ALLOWED" : "NO"
+        }
+      },
+      "synthesized" : {
+        "table" : {
+          "ACTION" : "build",
+          "ENABLE_PREVIEWS" : "NO",
+          "ENABLE_XOJIT_PREVIEWS" : "YES",
+          "ONLY_ACTIVE_ARCH" : "YES"
+        }
+      }
+    }
+  },
+  "schemeCommand" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

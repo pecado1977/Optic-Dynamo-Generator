@@ -1,0 +1,23 @@
+{
+  "coil_source": "/Users/jkortela/Documents/walter_russell_dynamo/github_simulaattori/generator/outputs",
+  "coupling_offdiagonal_scale": 1.0,
+  "figures_dir": "/Users/jkortela/Documents/walter_russell_dynamo/github_simulaattori/dynamic_power_multilang_simulator/figures_updated_coils_20260531",
+  "metglas_actual_average_UA_to_UB_power_W": 10.267610592875757,
+  "metglas_actual_average_net_UA_to_UB_power_W": 21.344931345865092,
+  "metglas_dynamic_UA_to_UB_Pmax_W": 8.711157691099652,
+  "metglas_k_0p95_target_50mT_Pmax_W": 10010.87174666666,
+  "metglas_signal_summary_count": 12,
+  "metglas_target_50mT_UA_to_UB_Pmax_W": 70.99122346666664,
+  "metglas_waveform_sample_count": 129,
+  "mode_count": 34,
+  "orthogonal_k_0p08_primary_I_rms_A": 55.91742644860808,
+  "orthogonal_k_0p08_primary_V_rms_V": 9314.32947494489,
+  "orthogonal_k_0p08_procurement_cable_two_windings_m": 93.83999999999999,
+  "orthogonal_k_0p08_required_B_for_10kW_T": 0.5934275079509128,
+  "orthogonal_k_0p08_selected_turns": 12,
+  "outputs_dir": "/Users/jkortela/Documents/walter_russell_dynamo/github_simulaattori/dynamic_power_multilang_simulator/outputs_updated_coils_20260531",
+  "power_w": 10000.0,
+  "simulator_version": "updated_coils_20260531",
+  "total_stage_copper_W": 166.66470310529866,
+  "total_stage_source_W": 3806.423732402861
+}
